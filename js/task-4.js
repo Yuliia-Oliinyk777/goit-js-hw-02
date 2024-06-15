@@ -1,20 +1,31 @@
-
-
-
-
-
-
-
-
-
-
-
-/*
-function getShippingMessage(country, price, deliveryFee) {
-    const totalPrice = price + deliveryFee;
-    return `Shipping to ${country} will cost ${totalPrice} credits`;
+function getShippingCost(country) {
+    let message = '';
+    switch (country) {
+        case 'China': {
+             message = 'Shipping to China will cost 100 credits';
+            break;
+        }  
+        case 'Chile': {
+ message = 'Shipping to Chile will cost 250 credits';
+            break;
+        }
+        case 'Australia': {
+            message = 'Shipping to Australia will cost 170 credits';
+            break;
+        }   
+        case 'Jamaica': {
+            message = 'Shipping to Jamaica will cost 120 credits';
+            break;
+        }   
+        default: {
+            message = 'Sorry, there is no delivery to your country'
+    }
+    }
+    return message;
 }
-console.log(getShippingMessage("Australia", 120, 50)); // "Shipping to Australia will cost 170 credits"
-console.log(getShippingMessage("Germany", 80, 20)); // "Shipping to Germany will cost 100 credits"
-console.log(getShippingMessage("Sweden", 100, 20)); // "Shipping to Sweden will cost 120 credits"
-*/
+console.log(getShippingCost("Australia")); // "Shipping to Australia will cost 170 credits"
+console.log(getShippingCost("Germany")); // "Sorry, there is no delivery to your country"
+console.log(getShippingCost("China")); // "Shipping to China will cost 100 credits"
+console.log(getShippingCost("Chile")); // "Shipping to Chile will cost 250 credits"
+console.log(getShippingCost("Jamaica")); // "Shipping to Jamaica will cost 120 credits"
+console.log(getShippingCost("Sweden")); // "Sorry, there is no delivery to your country"
